@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import VajillaService from '../services/VajillaService';
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/styles.css'
 
 const AddVajillaComponent = () => {
     const [nombre, setNombre] = useState('');
@@ -23,56 +24,55 @@ const AddVajillaComponent = () => {
     }
 
   return (
-    <div>
-        <div className='container'>
-            <div className='row'>
-                <div className='card col-md-6 offset-md-3 offset-md-3'>
-                    <h2>Registro de Vajilla</h2>
-                    <div className='card body'>
-                        <form>
-                            <div className='form-group mb-2'>
-                                <label className='form-label'>Nombre</label>
-                                <input 
-                                    type='text' 
-                                    placeholder='Ingrese el nombre'
-                                    name='nombre'
-                                    className='form-control'
-                                    value = { nombre }
-                                    onChange={ (e) => setNombre(e.target.value) }
-                                    />
-                            </div>
-                            <div className='form-group mb-2'>
-                                <label className='form-label'>Cantidad</label>
-                                <input 
-                                    type='text' 
-                                    placeholder='Ingrese la cantidad'
-                                    name='cantidad'
-                                    className='form-control'
-                                    value = { cantidad }
-                                    onChange={ (e) => setCantidad(e.target.value) }
-                                    />
-                            </div>
-                            <div className='form-group mb-2'>
-                                <label className='form-label'>Descripcion</label>
-                                <input 
-                                    type='text' 
-                                    placeholder='Ingrese la descripcion'
-                                    name='descripcion'
-                                    className='form-control'
-                                    value = { descripcion }
-                                    onChange={ (e) => setDescripcion(e.target.value) }
-                                    />
-                            </div>
-                            <button className='btn btn-success' onClick={ (e) => saveVajilla(e) }>Guardar</button>
-                            &nbsp; &nbsp;
-                            <Link to='/vajillas' className='btn btn-danger'>Cancelar</Link>
-                        </form>
-                    </div>
+    <div className='container'>
+        <h2>Registro de Vajilla</h2>
+        &nbsp; &nbsp;
+        <div>
+        <form>
+          <div className='form-group'>
+             <div>
+                    <label htmlFor='miNombre' >Nombre</label>
+                    <input 
+                        id='miNombre'
+                        type='text' 
+                        placeholder='Ingrese el nombre'
+                        name='nombre'
+                        className='form-control'
+                        value = { nombre }
+                        onChange={ (e) => setNombre(e.target.value) }
+                    />
+</div>
+<div>
+                <label htmlFor='miCantidad'>Cantidad</label>
+                <input 
+                    id='miCantidad'
+                    type='text' 
+                    placeholder='Ingrese la cantidad'
+                    name='cantidad'
+                    className='form-control'
+                    value = { cantidad }
+                    onChange={ (e) => setCantidad(e.target.value) }
+                />
+     </div>
+     <div>           
+                <label htmlFor='miDescripcion'>Descripcion</label>
+                <input 
+                    id='miDescripcion'
+                    type='text' 
+                    placeholder='Ingrese la descripcion'
+                    name='descripcion'
+                    className='form-control'
+                    value = { descripcion }
+                    onChange={ (e) => setDescripcion(e.target.value) }
+                />
                 </div>
-            </div>
+                </div>
+            <button  onClick={ (e) => saveVajilla(e) }>Guardar</button>
+            &nbsp; &nbsp;
+            <Link to='/vajillas' className='Cancelar'>Cancelar</Link>
+        </form>
         </div>
-    </div>
-    
+    </div>     
   )
 }
 

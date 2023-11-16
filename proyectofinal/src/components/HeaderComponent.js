@@ -1,14 +1,18 @@
-import React from 'react'
+
+import logo from '../assets/logo1-removebg-preview.png';
 
 export const HeaderComponent = () => {
   return (
     <div>
         <header>
-            <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
-                <div>
-                    <a href='/' className='navbar-brand'>Gestion de Vajillas</a>
-                </div>
-            </nav>
+          <nav>
+          <div class="container-fluid">
+            <a class="navbar-brand" href='/'>
+              <img src={logo} alt="Logo Vajilla"/>
+            </a>
+            
+          </div>
+        </nav>
         </header>
     </div>
   )

@@ -33,21 +33,24 @@ export const ListVajillaComponent = () => {
   }
   
   return (
-    <div className='coTextEncoderntainer'>
-        <h2 className='text-center'>Lista de Vajillas</h2>
+    <div className='container'>
+        <div>
+        <h2>Lista de Vajillas</h2>
         
-        <Link to='/add-vajilla' className='btn btn-primary mb-2'>Agregar Vajilla</Link>
-        
-        <div className='container' >
+        <Link to='/add-vajilla' className='linkAgregar'>Agregar Vajilla</Link>
+        </div>
+        &nbsp; &nbsp;        
+        <form>
+        <div className="col-sm-12">
             <input
-                className='form-control inputBuscar'
+                type='text'
                 value={busqueda}
                 placeholder='Busqueda de vajilla'
                 onChange={handleChange}
             />
-            <button className='btn btn-success'> <FontAwesomeIcon icon={faSearch}/></button>
+            <button> <FontAwesomeIcon icon={faSearch}/></button>
         </div>  
-
+        &nbsp; &nbsp;        
         <table className='table table-bordered table striped'>
             <thead>
                 <th>ID</th>
@@ -69,7 +72,7 @@ export const ListVajillaComponent = () => {
                 }
             </tbody>
         </table>
-
+        </form>
     </div>
   )
 }
